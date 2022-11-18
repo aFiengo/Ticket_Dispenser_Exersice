@@ -31,10 +31,14 @@ int phoneNumber;
 string? paymentInfoInput;
 double? ticketPriceOut;
 int zoneInput;
+int eventTypeInput;
+int eventNameInput;
 //*************************************************************************************************************************************
 dispenserMachine.Introduction("Bienvenido al servicio para compras de entradas de TRUEXTEND");
-dispenserMachine.ShowInfo("Escoge al tipo de evento que te gustaria asistir:", eventType);
-string? choosenEventIndexInput = Console.ReadLine();
+dispenserMachine.ShowEventTypes("Escoge al tipo de evento que te gustaria asistir: ", _event.Type);
+eventTypeInput = Convert.ToInt32(Console.ReadLine()) - 1;
+EventType choosenEventType = _event.Type[eventTypeInput];
+/*string? choosenEventIndexInput = Console.ReadLine();
 int choosenEvent = Convert.ToInt32(choosenEventIndexInput);
 switch (choosenEvent)
 {
@@ -47,9 +51,12 @@ switch (choosenEvent)
     default:
         typeOfEvent = "N/A";
         break;
-}
+}*/
 //*************************************************************************************************************************************
-Event currentEvent = choosenEvent == 1 ? new MusicEvent() : new SportEvent();
+dispenserMachine.ShowEventNames("Estos son los eventos disponibles. Selecciona a cual quisieras asistir: ", _event.Names);
+eventNameInput = Convert.ToInt32(Console.ReadLine()) - 1;
+EventName choosenEventName = _event.Names[eventNameInput];
+Event currentEvent = choosenEventName == 1 ? new LlajtaRockEvent() : choosenEventName == 2? new DownloadEvent () : new RoadToUltraEvent();
 Console.WriteLine("******************************************");
 dispenserMachine.ShowZones("Selecciona el sector:", currentEvent.Zones);
 zoneInput = Convert.ToInt32(Console.ReadLine()) - 1;
@@ -130,23 +137,14 @@ for (int i = 0; i < numberOfTickets; i++)
 }
 Console.WriteLine("***********************************************************************************************************");
 dispenserMachine.AskSomething("Su Pedido es el siguiente:");
-// Console.WriteLine("UID: {0}", user.UID);
 Console.WriteLine($"UID: {user.UID} algo mas");
-// Console.WriteLine("Nombre y Apellido: {0} {1}", user.Name, user.LastName);
-// string nameLastToShow = String.Format("Nombre y Apellido: {0} {1}", user.Name, user.LastName);
 Console.WriteLine($"Nombre y Apellido: {user.Name} {user.LastName}");
-
-string variableOne = "Hola mundo" + " " + user.Name; // concatenacion
-string variableTwo = String.Format("Hola mundo {0}", user.Name); // string format
-string variableThree = $"Hola mundo {user.Name}"; // string template
-
 Console.WriteLine("E-mail: {0}", user.Email);
 Console.WriteLine("Numero de telefono: {0}", user.PhoneNumber);
 Console.WriteLine("Edad: {0}", user.Age);
 Console.WriteLine("Metodo de pago: {0}", user.PaymentInfo);
 Console.WriteLine("Event Name: {0}", currentEvent.EventName);
 Console.WriteLine("Date: {0}", currentEvent.EventDate);
-// Console.WriteLine("Location: {0}", currentEvent.Location.LocationName + " , " + currentEvent.Location.LocationCity + " , " + currentEvent.Location.LocationState);
 Console.WriteLine($"Location: {currentEvent.Location.LocationName} , {currentEvent.Location.LocationCity} , {currentEvent.Location.LocationState}");
 Console.WriteLine("Zone: {0}", choosenZone.ZoneName);
 Console.WriteLine("Number of tickets: {0}", numberOfTickets);

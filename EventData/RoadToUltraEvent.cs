@@ -2,18 +2,12 @@ using TicketDispenser;
 
 namespace TicketDispenser.EventData
 {
-    public class LlajtaRockEvent : Event
+    public class RoadToUltraEvent : Event
     {      
-        public LlajtaRockEvent()
+        public RoadToUltraEvent()
         {
-                Names = new List<EventName> 
-                {
-                    new EventName()
-                    {
-                        Name = "Llajta Rock"
-                    }
-                };
-                Date = new DateTime(2022, 10, 28, 18, 0, 0);
+                Name = "Road To Ultra Music Fest";
+                Date = new DateTime(2022, 12, 21, 18, 0, 0);
                 Type = new List<EventType> 
                 {
                     new EventType()
@@ -23,9 +17,9 @@ namespace TicketDispenser.EventData
                 };
                 Location = new Locations
                 {
-                    Name = "Felix Capriles",
-                    City = "Cercado",
-                    State = "Cochabamba",
+                    Name = "Tahuichi Aguilera",
+                    City = "Chiquitos",
+                    State = "Santa Cruz de la sierra",
                     Country = "Bolivia",
                     Capacity = (32000 + 7000) - 5440
                 };
@@ -35,37 +29,37 @@ namespace TicketDispenser.EventData
                     {
                         Name = "Super VIP", 
                         Capacity = 1000, 
-                        TicketPrice = 1500
+                        TicketPrice = 1400
                     },
                     new Zone ()
                     {
                         Name = "VIP", 
                         Capacity = 2000, 
-                        TicketPrice = 800
+                        TicketPrice = 900
                     },
                     new Zone ()
                     {
                         Name = "Pista",
                         Capacity = 4000,
-                        TicketPrice = 500
+                        TicketPrice = 600
                     },
                     new Zone ()
                     {
                         Name = "Preferencia",
                         Capacity = 10560,
-                        TicketPrice = 250
+                        TicketPrice = 300
                     },
                     new Zone ()
                     {
                         Name = "General",
                         Capacity = 10560,
-                        TicketPrice = 250
+                        TicketPrice = 300
                     },
                     new Zone ()
                     {
                         Name = "Curva Norte",
                         Capacity = 5440,
-                        TicketPrice = 150
+                        TicketPrice = 200
                     },
                 };
         }
