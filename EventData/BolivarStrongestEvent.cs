@@ -8,13 +8,7 @@ namespace TicketDispenser.EventData
         {
                 Name = "Bolivar vs The Strongest";
                 Date = new DateTime(2022, 11, 28, 15, 0, 0);
-                Type = new List<EventType> 
-                {
-                    new EventType()
-                    {
-                        Name = "Sport Event"
-                    }
-                };
+                Type = TypeOfEvent.Sport;
                 Location = new Locations
                 {
                     Name = "Hernando Siles",

@@ -13,20 +13,20 @@ namespace TicketDispenser
         {
             Console.WriteLine(question);
         }
-       public void ShowEventTypes(string question, List<EventType> types)
+       public void ShowEventTypes(string question, List<TypeOfEvent> types)
         {
             Console.WriteLine(question);
             for (int i = 0; i < types.Count; i++)
             {
-                Console.WriteLine("{0}: {1}", i + 1, types[i].Name);
+                Console.WriteLine("{0}: {1}", i + 1, types[i]);
             }
         }
-        public void ShowEventNames(string question, List<EventName> names)
+        public void ShowEventNames(string question, List<Event> events)
         {
             Console.WriteLine(question);
-            for (int i = 0; i < names.Count; i++)
+            for (int i = 0; i < events.Count; i++)
             {
-                Console.WriteLine("{0}: {1}", i + 1, names[i].Name);
+                Console.WriteLine("{0}: {1}", i + 1, events[i].Name);
             }
         }
         public void ShowZones(string question, List<Zone> zones)
@@ -59,6 +59,14 @@ namespace TicketDispenser
             else
             {
                 output = 1;
+            }
+        }
+        public void ShowInfo(string? question,  List<string> list)
+        {
+            Console.WriteLine(question);
+            for (int i = 0; i < list.Count; i++)
+            {
+                Console.WriteLine("{0}: {1}", i + 1, list[i]);
             }
         }
         public void ConfirmInput(string comment)

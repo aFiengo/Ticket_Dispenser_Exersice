@@ -1,0 +1,6 @@
+# ignore ALL files in ANY directory named temp
+.vscode
+bin/
+obj/
+.git
+obj/Debug/net6.0/TicketDispenser.GeneratedMSBuildEditorConfig.editorconfig

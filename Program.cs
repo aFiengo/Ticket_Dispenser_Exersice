@@ -2,7 +2,7 @@ using TicketDispenser;
 using TicketDispenser.EventData;
 //*************************************************************************************************************************************
 DispenserMachine dispenserMachine = new DispenserMachine();
-Event _event = new Event();
+List<Event>? _events = new List<Event>();
 //*************************************************************************************************************************************
 List<string> answers = new List<string>();
 answers.Add("Sí");
@@ -16,9 +16,7 @@ List<string> paymentInfo = new List<string>();
 paymentInfo.Add("Debit/Credit");
 paymentInfo.Add("PayPal");
 paymentInfo.Add("QR code");
-//*************************************************************************************************************************************
-string typeOfEvent;
-string zone;
+
 string? numberOfTicketsInput;
 int numberOfTickets;
 string? name;
@@ -29,34 +27,35 @@ string? email;
 string? phoneNumberInput;
 int phoneNumber;
 string? paymentInfoInput;
-double? ticketPriceOut;
+
 int zoneInput;
 int eventTypeInput;
 int eventNameInput;
 //*************************************************************************************************************************************
 dispenserMachine.Introduction("Bienvenido al servicio para compras de entradas de TRUEXTEND");
-dispenserMachine.ShowEventTypes("Escoge al tipo de evento que te gustaria asistir: ", _event.Type);
+List<TypeOfEvent> typeOfEvent = new List<TypeOfEvent>
+{
+    TypeOfEvent.Music,
+    TypeOfEvent.Sport
+};
+dispenserMachine.ShowEventTypes("Escoge al tipo de evento que te gustaria asistir: ", typeOfEvent);
 eventTypeInput = Convert.ToInt32(Console.ReadLine()) - 1;
-EventType choosenEventType = _event.Type[eventTypeInput];
-/*string? choosenEventIndexInput = Console.ReadLine();
-int choosenEvent = Convert.ToInt32(choosenEventIndexInput);
-switch (choosenEvent)
+switch (eventTypeInput)
 {
     case (int)TypeOfEvent.Music:
-        typeOfEvent = "Music Event";
+        _events = new MusicEvent().Events;
         break;
     case (int)TypeOfEvent.Sport:
-        typeOfEvent = "Sport Event";
+        _events = new SportEvent().Events;
         break;
     default:
-        typeOfEvent = "N/A";
+        _events = null;
         break;
-}*/
+}
 //*************************************************************************************************************************************
-dispenserMachine.ShowEventNames("Estos son los eventos disponibles. Selecciona a cual quisieras asistir: ", _event.Names);
+dispenserMachine.ShowEventNames("Estos son los eventos disponibles. Selecciona a cual quisieras asistir: ", _events);
 eventNameInput = Convert.ToInt32(Console.ReadLine()) - 1;
-EventName choosenEventName = _event.Names[eventNameInput];
-Event currentEvent = choosenEventName == 1 ? new LlajtaRockEvent() : choosenEventName == 2? new DownloadEvent () : new RoadToUltraEvent();
+Event currentEvent = _events[eventNameInput];
 Console.WriteLine("******************************************");
 dispenserMachine.ShowZones("Selecciona el sector:", currentEvent.Zones);
 zoneInput = Convert.ToInt32(Console.ReadLine()) - 1;
@@ -128,11 +127,11 @@ for (int i = 0; i < numberOfTickets; i++)
 {
     ticketList.Add(new Tickets()
     {
-        Zone = currentEvent.Zones[zoneInput].ZoneName,
+        Zone = currentEvent.Zones[zoneInput].Name,
         TID = Guid.NewGuid(),
         Price = choosenZone.TicketPrice,
         Location = currentEvent.Location,
-        Date = currentEvent.EventDate
+        Date = currentEvent.Date
     });
 }
 Console.WriteLine("***********************************************************************************************************");
@@ -143,10 +142,10 @@ Console.WriteLine("E-mail: {0}", user.Email);
 Console.WriteLine("Numero de telefono: {0}", user.PhoneNumber);
 Console.WriteLine("Edad: {0}", user.Age);
 Console.WriteLine("Metodo de pago: {0}", user.PaymentInfo);
-Console.WriteLine("Event Name: {0}", currentEvent.EventName);
-Console.WriteLine("Date: {0}", currentEvent.EventDate);
-Console.WriteLine($"Location: {currentEvent.Location.LocationName} , {currentEvent.Location.LocationCity} , {currentEvent.Location.LocationState}");
-Console.WriteLine("Zone: {0}", choosenZone.ZoneName);
+Console.WriteLine("Event Name: {0}", currentEvent.Name);
+Console.WriteLine("Date: {0}", currentEvent.Date);
+Console.WriteLine($"Location: {currentEvent.Location.Name} , {currentEvent.Location.City} , {currentEvent.Location.State}");
+Console.WriteLine("Zone: {0}", choosenZone.Name);
 Console.WriteLine("Number of tickets: {0}", numberOfTickets);
 Console.WriteLine("Price: {0}", choosenZone.TicketPrice);
 Console.WriteLine("***********************************************************************************************************");
@@ -156,7 +155,7 @@ Console.WriteLine("*************************************************************
 foreach (Tickets tickets in ticketList)
 {
     Console.WriteLine("TID: {0}", tickets.TID);
-    Console.WriteLine("Location: {0}", tickets.Location.LocationName);
+    Console.WriteLine("Location: {0}", tickets.Location.Name);
     Console.WriteLine("Date: {0}", tickets.Date);
     Console.WriteLine("Zone: {0}", tickets.Zone);
     Console.WriteLine("Price: {0}", tickets.Price);

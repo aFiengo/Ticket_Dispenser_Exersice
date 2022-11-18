@@ -4,21 +4,9 @@ namespace TicketDispenser.EventData
     {
         public WilsterAuroraEvent()
         {
-                Names = new List<EventName> 
-                {
-                    new EventName()
-                    {
-                        Name = "Wilstermann vs Aurora"
-                    }
-                };
+                Name = "Wilstermann vs Aurora";
                 Date = new DateTime(2022, 10, 26, 20, 0, 0);
-                Type = new List<EventType> 
-                {
-                    new EventType()
-                    {
-                        Name = "Sport Event"
-                    }
-                };
+                Type = TypeOfEvent.Sport;
                 Location = new Locations
                 {
                     Name = "Felix Capriles",

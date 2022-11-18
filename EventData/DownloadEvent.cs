@@ -6,15 +6,9 @@ namespace TicketDispenser.EventData
     {      
         public DownloadEvent()
         {
-                Name = "Download Music Fest";
+                Name = "Download Festival";
                 Date = new DateTime(2022, 11, 28, 15, 0, 0);
-                Type = new List<EventType> 
-                {
-                    new EventType()
-                    {
-                        Name = "Music Event"
-                    }
-                };
+                Type = TypeOfEvent.Music;
                 Location = new Locations
                 {
                     Name = "Hernando Siles",

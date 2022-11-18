@@ -6,13 +6,7 @@ namespace TicketDispenser.EventData
         {
                 Name = "Oriente Petrolero vs Blooming";
                 Date = new DateTime(2022, 11, 26, 20, 0, 0);
-                Type = new List<EventType> 
-                {
-                    new EventType()
-                    {
-                        Name = "Sport Event"
-                    }
-                };
+                Type = TypeOfEvent.Sport;
                 Location = new Locations
                 {
                     Name = "Tahuichi Aguilera",

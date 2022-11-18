@@ -6,15 +6,9 @@ namespace TicketDispenser.EventData
     {      
         public RoadToUltraEvent()
         {
-                Name = "Road To Ultra Music Fest";
+                Name = "Road to Ultra Music Festival";
                 Date = new DateTime(2022, 12, 21, 18, 0, 0);
-                Type = new List<EventType> 
-                {
-                    new EventType()
-                    {
-                        Name = "Music Event"
-                    }
-                };
+                Type = TypeOfEvent.Music;
                 Location = new Locations
                 {
                     Name = "Tahuichi Aguilera",

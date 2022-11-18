@@ -5,7 +5,7 @@ namespace TicketDispenser
         Yes = 1,
         No = 0
     }
-    enum TypeOfEvent
+    public enum TypeOfEvent
     {
         Music = 0,
         Sport = 1
