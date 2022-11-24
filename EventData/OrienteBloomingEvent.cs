@@ -1,4 +1,4 @@
-namespace TicketDispenser.EventData
+namespace TicketDispenserExercise.EventData
 {
     public class OrienteBloomingEvent : Event
     {

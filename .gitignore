@@ -3,4 +3,3 @@
 bin/
 obj/
 .git
-obj/Debug/net6.0/TicketDispenser.GeneratedMSBuildEditorConfig.editorconfig

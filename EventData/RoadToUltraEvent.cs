@@ -1,6 +1,5 @@
-using TicketDispenser;
 
-namespace TicketDispenser.EventData
+namespace TicketDispenserExercise.EventData
 {
     public class RoadToUltraEvent : Event
     {      

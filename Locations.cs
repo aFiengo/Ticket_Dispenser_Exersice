@@ -1,4 +1,4 @@
-namespace TicketDispenser
+namespace TicketDispenserExercise
 {
     public class Locations
     {
