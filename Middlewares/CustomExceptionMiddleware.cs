@@ -10,7 +10,22 @@ public class GlobalExceptionHandlerMiddleware
     }
     public async Task InvokeAsync(HttpContext httpContext)
     {
-                await _next(httpContext);
+        try
+        {
+            await _next(httpContext);    
+        }
+        catch (System.Exception ex)
+        {
+            if (ex.StackTrace != null) 
+            { 
+                Console.WriteLine(ex.StackTrace);
+            } 
+            if (ex.InnerException != null && ex.InnerException.StackTrace != null)
+            { 
+                Console.WriteLine(ex.InnerException.StackTrace);
+            } 
+            throw ex;
+        }        
     }
 }
 
