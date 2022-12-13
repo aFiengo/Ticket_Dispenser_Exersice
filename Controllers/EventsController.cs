@@ -5,7 +5,7 @@ using EventsLibrary.EventData;
 namespace TicketDispenserExercise.Controllers
 {
     [ApiController]
-    [Route("api[controller]")]
+    [Route("[controller]")]
     public class EventsController : ControllerBase
     {
         private EventManager eventManager;
@@ -14,24 +14,24 @@ namespace TicketDispenserExercise.Controllers
             this.eventManager = eventManager;
         }
         [HttpGet]
-        [Route("event-type")]
+        [Route("type")]
         public IActionResult GetTypeOfEvents()
         {
             return Ok(this.eventManager.GetTypeOfEvents());
         }
 
         [HttpGet]
-        [Route("event-type-music")]
+        [Route("type/music")]
         public IActionResult GetMusicEvents()
         {
             return Ok(this.eventManager.GetMusicEvents());
         }
         [HttpGet]
-        [Route("event-type-music-llajtaRock-zones")]
+        [Route("music/{EventID}")]
         public IActionResult GetLlajtaRockEventZones()
         {
             return Ok(this.eventManager.GetLlajtaRockEventZones());
-         }   
+        }   
         [HttpGet]
         [Route("event-type-music-download-zones")]
         public IActionResult GetDownloadEventZones()
