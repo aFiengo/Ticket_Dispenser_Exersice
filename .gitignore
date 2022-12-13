@@ -1,5 +1,6 @@
 # ignore ALL files in ANY directory named temp
-.vscode
+.vscode/
 bin/
 obj/
 .git
+.vs/
