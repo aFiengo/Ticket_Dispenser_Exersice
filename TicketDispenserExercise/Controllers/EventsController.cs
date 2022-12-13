@@ -27,46 +27,23 @@ namespace TicketDispenserExercise.Controllers
             return Ok(this.eventManager.GetMusicEvents());
         }
         [HttpGet]
-        [Route("music/{EventID}")]
-        public IActionResult GetLlajtaRockEventZones()
-        {
-            return Ok(this.eventManager.GetLlajtaRockEventZones());
-        }   
-        [HttpGet]
-        [Route("event-type-music-download-zones")]
-        public IActionResult GetDownloadEventZones()
-        {
-            return Ok(this.eventManager.GetDownloadEventZones());
-        }
-        [HttpGet]
-        [Route("event-type-music-roadToUltra-zones")]
-        public IActionResult GetRoadToUltraEventZones()
-        {
-            return Ok(this.eventManager.GetRoadToUltraEventZones());
-        }
-        [HttpGet]
-        [Route("event-type-sport")]
+        [Route("type/sport")]
         public IActionResult GetSportEvents()
         {
             return Ok(this.eventManager.GetSportEvents());
         }
         [HttpGet]
-        [Route("event-type-sport-wilstermannAurora-zones")]
-        public IActionResult GetWilsterAuroraEventZones()
+        [Route("music/{EventID}")]
+        public IActionResult GetMusicEventZones([FromRoute] Guid EventID)
         {
-            return Ok(this.eventManager.GetWilsterAuroraEventZones());
-        }
+            return Ok(this.eventManager.GetMusicEventZones(EventID));
+        }   
         [HttpGet]
-        [Route("event-type-sport-bolivarStrongest-zones")]
-        public IActionResult GetBolivarStrongestEventZones()
+        [Route("sport/{EventID}")]
+        public IActionResult GetSportEventZones([FromRoute] Guid EventID)
         {
-            return Ok(this.eventManager.GetBolivarStrongestEventZones());
-        }
-        [HttpGet]
-        [Route("event-type-sport-orienteBlooming-zones")]
-        public IActionResult GetOrienteBloomingEventZones()
-        {
-            return Ok(this.eventManager.GetOrienteBloomingEventZones());
+            return Ok(this.eventManager.GetSportEventZones(EventID));
         }
     }
 }
+//[FromRoute] Guid eventId

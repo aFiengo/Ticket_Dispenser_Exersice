@@ -29,35 +29,24 @@ public class EventManager
     {
         return musicEvent;
     }
-    public List<Zone> GetLlajtaRockEventZones()
-    {
-        for (int i=0; i<musicEvent.Count; i++)
-        {
-            if (musicEvent[i].EventID == )
-            {
-                eventFound = musicEvent[i];
-            }
-        }
-        return eventFound.Zones;
-    }
-    public List<Zone> GetDownloadEventZones()
+    public List<Zone> GetMusicEventZones(Guid EventID)
     {
        for (int i=0; i<musicEvent.Count; i++)
         {
-            if (musicEvent[i].Name == "Download Festival")
+            if (musicEvent[i].EventID == EventID)
             {
                 eventFound = musicEvent[i];
             }
         }
         return eventFound.Zones;
     }
-    public List<Zone> GetRoadToUltraEventZones()
+    public List<Zone> GetSportEventZones(Guid EventID)
     {
-        for (int i=0; i<musicEvent.Count; i++)
+        for (int i=0; i<sportEvent.Count; i++)
         {
-            if (musicEvent[i].Name == "Road to Ultra Music Festival")
+            if (sportEvent[i].EventID == EventID)
             {
-                eventFound = musicEvent[i];
+                eventFound = sportEvent[i];
             }
         }
         return eventFound.Zones;
@@ -65,38 +54,5 @@ public class EventManager
     public List<Event> GetSportEvents()
     {
         return sportEvent;
-    }
-    public List<Zone> GetWilsterAuroraEventZones()
-    {
-       for (int i=0; i<sportEvent.Count; i++)
-        {
-            if (sportEvent[i].Name == "Wilstermann vs Aurora")
-            {
-                eventFound = sportEvent[i];
-            }
-        }
-        return eventFound.Zones;
-    }
-    public List<Zone> GetBolivarStrongestEventZones()
-    {
-        for (int i=0; i<sportEvent.Count; i++)
-        {
-            if (sportEvent[i].Name == "Bolivar vs The Strongest")
-            {
-                eventFound = sportEvent[i];
-            }
-        }
-        return eventFound.Zones;
-    }
-    public List<Zone> GetOrienteBloomingEventZones()
-    {
-        for (int i=0; i<sportEvent.Count; i++)
-        {
-            if (sportEvent[i].Name == "Oriente Petrolero vs Blooming")
-            {
-                eventFound = sportEvent[i];
-            }
-        }
-        return eventFound.Zones;
     }
 }
