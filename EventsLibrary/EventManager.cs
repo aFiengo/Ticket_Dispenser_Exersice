@@ -1,11 +1,10 @@
 namespace EventsLibrary.EventData;
 
-public class EventManager
+public class EventManager : Event
 {
     List<string> events;
     List<Event> musicEvent;
     List<Event> sportEvent;
-    Event eventFound;
     public EventManager()
     {
         musicEvent = new List<Event>();
@@ -21,6 +20,18 @@ public class EventManager
         sportEvent.Add(new OrienteBloomingEvent());
         
     }
+    public Event AddNewMusicEvents(string eventName)
+    {
+        Event createdEvent = new Event() { EventID = Guid.NewGuid(), Name = eventName};
+        musicEvent.Add(createdEvent);
+        return createdEvent;
+    }
+    public Event AddNewSportEvents(string eventName)
+    {
+        Event createdEvent = new Event() { EventID = Guid.NewGuid(), Name = eventName};
+        sportEvent.Add(createdEvent);
+        return createdEvent;
+    }
     public List<string> GetTypeOfEvents()
     {
         return events;
@@ -31,17 +42,19 @@ public class EventManager
     }
     public List<Zone> GetMusicEventZones(Guid EventID)
     {
-       for (int i=0; i<musicEvent.Count; i++)
+       Event eventFound = null;
+        for (int i=0; i<musicEvent.Count; i++)
         {
             if (musicEvent[i].EventID == EventID)
             {
                 eventFound = musicEvent[i];
             }
         }
-        return eventFound.Zones;
+        return eventFound != null ?  eventFound.Zones : new List<Zone>();
     }
     public List<Zone> GetSportEventZones(Guid EventID)
     {
+        Event eventFound = null;
         for (int i=0; i<sportEvent.Count; i++)
         {
             if (sportEvent[i].EventID == EventID)
@@ -49,7 +62,7 @@ public class EventManager
                 eventFound = sportEvent[i];
             }
         }
-        return eventFound.Zones;
+        return eventFound != null ?  eventFound.Zones : new List<Zone>();
     }
     public List<Event> GetSportEvents()
     {
