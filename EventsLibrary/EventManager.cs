@@ -20,17 +20,31 @@ public class EventManager : Event
         sportEvent.Add(new OrienteBloomingEvent());
         
     }
-    public Event AddNewMusicEvents(string eventName)
+    public Event AddNewMusicEvents(Event eventToAdd)
     {
-        Event createdEvent = new Event() { EventID = Guid.NewGuid(), Name = eventName};
-        musicEvent.Add(createdEvent);
-        return createdEvent;
+        //Event createdEvent = new Event() { EventID = Guid.NewGuid(), Name = eventName, Type = "Music", State = stateName};
+        if(String.IsNullOrEmpty(eventToAdd.Name))
+        {
+            throw new Exception("Se requiere un nombre");
+        }
+        eventToAdd.EventID = Guid.NewGuid();
+        eventToAdd.Type="Music";
+        eventToAdd.Date = new DateTime();
+        musicEvent.Add(eventToAdd);
+        return eventToAdd;
     }
-    public Event AddNewSportEvents(string eventName)
+    public Event AddNewSportEvents(Event eventToAdd)
     {
-        Event createdEvent = new Event() { EventID = Guid.NewGuid(), Name = eventName};
-        sportEvent.Add(createdEvent);
-        return createdEvent;
+        //Event eventToAdd = new Event() { EventID = Guid.NewGuid(), Name = eventName, Type = "Sport", State = stateName};
+        if(String.IsNullOrEmpty(eventToAdd.Name))
+        {
+            throw new Exception("Se requiere un nombre");
+        }
+        eventToAdd.EventID = Guid.NewGuid();
+        sportEvent.Add(eventToAdd);
+        eventToAdd.Type = "Sport";
+        eventToAdd.Date = new DateTime();
+        return eventToAdd;
     }
     public List<string> GetTypeOfEvents()
     {
@@ -39,6 +53,13 @@ public class EventManager : Event
     public List<Event> GetMusicEvents()
     {
         return musicEvent;
+    }
+    public Event UpdateMusicEvents(Guid id, Event eventToUpdate)
+    {
+        Event eventFound = musicEvent.Find(ev => ev.EventID == id);
+        eventFound.Name = eventToUpdate.Name;
+        eventFound.State = eventToUpdate.State;
+        return eventToUpdate;
     }
     public List<Zone> GetMusicEventZones(Guid EventID)
     {
@@ -52,6 +73,30 @@ public class EventManager : Event
         }
         return eventFound != null ?  eventFound.Zones : new List<Zone>();
     }
+    public bool RemoveMusicEvents(Guid id)
+    {
+        Event eventFound = musicEvent.Find(ev => ev.EventID == id);
+        if(eventFound != null)
+                {
+                     musicEvent.Remove(eventFound);
+                     return true;
+                }
+        else
+        {
+            return false;
+        }
+    }
+        public List<Event> GetSportEvents()
+    {
+        return sportEvent;
+    }
+    public Event UpdateSportEvents(Guid id, Event eventToUpdate)
+    {
+        Event eventFound = sportEvent.Find(ev => ev.EventID == id);
+        eventFound.Name = eventToUpdate.Name;
+        eventFound.State = eventToUpdate.State;
+        return eventToUpdate;
+    }
     public List<Zone> GetSportEventZones(Guid EventID)
     {
         Event eventFound = null;
@@ -64,8 +109,17 @@ public class EventManager : Event
         }
         return eventFound != null ?  eventFound.Zones : new List<Zone>();
     }
-    public List<Event> GetSportEvents()
+    public bool RemoveSportEvents(Guid id)
     {
-        return sportEvent;
+        Event eventFound = sportEvent.Find(ev => ev.EventID == id);
+        if(eventFound != null)
+                {
+                     sportEvent.Remove(eventFound);
+                     return true;
+                }
+        else
+        {
+            return false;
+        }
     }
 }

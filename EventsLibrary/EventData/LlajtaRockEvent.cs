@@ -10,11 +10,11 @@ namespace EventsLibrary.EventData
                 Date = new DateTime(2022, 10, 28, 18, 0, 0);
                 Type = "Music";
                 EventID = Guid.NewGuid();
-                Location = new Locations
+                State = "Cochabamba";
+                Location = new Venues
                 {
                     Name = "Felix Capriles",
                     City = "Cercado",
-                    State = "Cochabamba",
                     Country = "Bolivia",
                     Capacity = (32000 + 7000) - 5440
                 };

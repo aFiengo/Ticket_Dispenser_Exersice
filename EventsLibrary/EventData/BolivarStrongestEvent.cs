@@ -9,11 +9,11 @@ namespace EventsLibrary.EventData
                 Date = new DateTime(2022, 11, 28, 15, 0, 0);
                 Type = "Sport";
                 EventID = Guid.NewGuid();
-                Location = new Locations
+                State = "La Paz";
+                Location = new Venues
                 {
                     Name = "Hernando Siles",
                     City = "Miraflores",
-                    State = "La Paz",
                     Country = "Bolivia",
                     Capacity = 32000
                 };

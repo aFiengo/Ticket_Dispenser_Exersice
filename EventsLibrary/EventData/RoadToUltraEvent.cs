@@ -9,11 +9,11 @@ namespace EventsLibrary.EventData
                 Date = new DateTime(2022, 12, 21, 18, 0, 0);
                 Type = "Music";
                 EventID = Guid.NewGuid();
-                Location = new Locations
+                State = "Santa Cruz de la sierra";
+                Location = new Venues
                 {
                     Name = "Tahuichi Aguilera",
                     City = "Chiquitos",
-                    State = "Santa Cruz de la sierra",
                     Country = "Bolivia",
                     Capacity = (32000 + 7000) - 5440
                 };

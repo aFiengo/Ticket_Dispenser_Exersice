@@ -8,11 +8,11 @@ namespace EventsLibrary.EventData
                 Date = new DateTime(2022, 10, 26, 20, 0, 0);
                 Type = "Sport";
                 EventID = Guid.NewGuid();
-                Location = new Locations
+                State = "Cochabamba";
+                Location = new Venues
                 {
                     Name = "Felix Capriles",
                     City = "Cercado",
-                    State = "Cochabamba",
                     Country = "Bolivia",
                     Capacity = 32000
                 };

@@ -6,6 +6,6 @@ namespace EventsLibrary
         public Guid TID { get; set; }
         public DateTime Date { get; set; }
         public double Price { get; set; }
-        public Locations Location { get; set; }
+        public Venues Location { get; set; }
     }
 }
