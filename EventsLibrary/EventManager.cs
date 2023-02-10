@@ -33,7 +33,7 @@ public class EventManager
     {
         for (int i = 0; i < musicEvent.Count; i++)
         {
-            if (musicEvent[i].EventID == )
+            if (musicEvent[i].Name == "Llajta Rock")
             {
                 eventFound = musicEvent[i];
             }
