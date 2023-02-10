@@ -1,0 +1,17 @@
+E:\Ariel\Trabajo\Truextend\Training\API_workshop\TicketDispenserExercise\EventsLibrary\obj\Debug\net6.0\EventsLibrary.csproj.AssemblyReference.cache
+E:\Ariel\Trabajo\Truextend\Training\API_workshop\TicketDispenserExercise\EventsLibrary\obj\Debug\net6.0\EventsLibrary.GeneratedMSBuildEditorConfig.editorconfig
+E:\Ariel\Trabajo\Truextend\Training\API_workshop\TicketDispenserExercise\EventsLibrary\obj\Debug\net6.0\EventsLibrary.AssemblyInfoInputs.cache
+E:\Ariel\Trabajo\Truextend\Training\API_workshop\TicketDispenserExercise\EventsLibrary\obj\Debug\net6.0\EventsLibrary.AssemblyInfo.cs
+E:\Ariel\Trabajo\Truextend\Training\API_workshop\TicketDispenserExercise\EventsLibrary\obj\Debug\net6.0\EventsLibrary.csproj.CoreCompileInputs.cache
+D:\Training\Ariel Fiengo\Training\API Workshop\Exercise\Ticket_Dispenser_API\TicketDispenserExercise\EventsLibrary\bin\Debug\net6.0\EventsLibrary.deps.json
+D:\Training\Ariel Fiengo\Training\API Workshop\Exercise\Ticket_Dispenser_API\TicketDispenserExercise\EventsLibrary\bin\Debug\net6.0\EventsLibrary.dll
+D:\Training\Ariel Fiengo\Training\API Workshop\Exercise\Ticket_Dispenser_API\TicketDispenserExercise\EventsLibrary\bin\Debug\net6.0\EventsLibrary.pdb
+D:\Training\Ariel Fiengo\Training\API Workshop\Exercise\Ticket_Dispenser_API\TicketDispenserExercise\EventsLibrary\obj\Debug\net6.0\EventsLibrary.csproj.AssemblyReference.cache
+D:\Training\Ariel Fiengo\Training\API Workshop\Exercise\Ticket_Dispenser_API\TicketDispenserExercise\EventsLibrary\obj\Debug\net6.0\EventsLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\Training\Ariel Fiengo\Training\API Workshop\Exercise\Ticket_Dispenser_API\TicketDispenserExercise\EventsLibrary\obj\Debug\net6.0\EventsLibrary.AssemblyInfoInputs.cache
+D:\Training\Ariel Fiengo\Training\API Workshop\Exercise\Ticket_Dispenser_API\TicketDispenserExercise\EventsLibrary\obj\Debug\net6.0\EventsLibrary.AssemblyInfo.cs
+D:\Training\Ariel Fiengo\Training\API Workshop\Exercise\Ticket_Dispenser_API\TicketDispenserExercise\EventsLibrary\obj\Debug\net6.0\EventsLibrary.csproj.CoreCompileInputs.cache
+D:\Training\Ariel Fiengo\Training\API Workshop\Exercise\Ticket_Dispenser_API\TicketDispenserExercise\EventsLibrary\obj\Debug\net6.0\EventsLibrary.dll
+D:\Training\Ariel Fiengo\Training\API Workshop\Exercise\Ticket_Dispenser_API\TicketDispenserExercise\EventsLibrary\obj\Debug\net6.0\refint\EventsLibrary.dll
+D:\Training\Ariel Fiengo\Training\API Workshop\Exercise\Ticket_Dispenser_API\TicketDispenserExercise\EventsLibrary\obj\Debug\net6.0\EventsLibrary.pdb
+D:\Training\Ariel Fiengo\Training\API Workshop\Exercise\Ticket_Dispenser_API\TicketDispenserExercise\EventsLibrary\obj\Debug\net6.0\ref\EventsLibrary.dll
